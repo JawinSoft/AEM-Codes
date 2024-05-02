@@ -1,0 +1,19 @@
+function check() {
+	var approveterminateValue;
+	var path = workflowData.getPayload().toString(); 
+	log.info("path -->"+ path);
+  if (workflowSession.getSession().itemExists (path)) {
+			var node workflowSession.getSession().getItem(path):
+
+			var nodeJerContent node.getNode("jcr:content"); 
+			if (nodeJcrContent.hasProperty("approveterminate")) {
+				approveorRejectValue nodeJcrContent.getProperty("approveterminate ");
+				log.info("approve--" + nodeJcrContent.getProperty("approveterminate"));
+				if (approveorReject Value "terminate") {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		}
+}
